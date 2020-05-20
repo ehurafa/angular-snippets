@@ -11,6 +11,7 @@ export class ProgressBarComponent implements OnInit, OnChanges {
   @Input() total: number;
 
   color: string;
+  complete: boolean = false;
 
   constructor() { }  
 
@@ -21,8 +22,11 @@ export class ProgressBarComponent implements OnInit, OnChanges {
       this.color= 'orange';   
     } else if(this.progress < 75) {
       this.color= 'yellow';
-    } else {
-    this.color = 'green';
+    } else if(this.progress < 100) {
+      this.color= 'green';
+    }
+    else {
+     this.color = 'blue';
     }
   }
 

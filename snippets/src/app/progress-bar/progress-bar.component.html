@@ -1,5 +1,5 @@
 <div class="progress-bar-container">
-    <div class="progress-bar {{color}}" 
+    <div [ngClass]="['progress-bar', color]" 
      [ngStyle]="{'width': progress + '%'}">
     </div>
  </div>
