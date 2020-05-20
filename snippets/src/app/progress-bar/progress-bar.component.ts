@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss']
 })
-export class ProgressBarComponent implements OnInit {
+export class ProgressBarComponent implements OnInit, OnChanges {
 
   @Input() progress: number;
   @Input() total: number;
@@ -13,6 +13,18 @@ export class ProgressBarComponent implements OnInit {
   color: string;
 
   constructor() { }  
+
+  colors(): void {
+    if(this.progress < 30) {
+      this.color = 'red';
+    } else if(this.progress < 55) {
+      this.color= 'orange';   
+    } else if(this.progress < 75) {
+      this.color= 'yellow';
+    } else {
+    this.color = 'green';
+    }
+  }
 
   ngOnInit(): void {
    
@@ -31,14 +43,13 @@ export class ProgressBarComponent implements OnInit {
       this.total = 100;
     }
     this.progress = (this.progress / this.total) * 100;
-
-    if(this.progress < 55) {
-      this.color = 'red';
-    } else if(this.progress < 75) {
-      this.color= 'yellow';
-    } else {
-    this.color = 'green';
-    }
+     
+    this.colors()
+ 
   }
+  ngOnChanges () {
+    this.colors()
+  }
+
 
 }
