@@ -1,3 +1,4 @@
-<input type="number" [(ngModel)]="initialVal" class="wrapped" min="0" max="100" />
+<input type="number" [(ngModel)]="percent" class="wrapped" min="0" max="100" /><br>
+<input type="range" step="0" min="0" max="100"  [(ngModel)]="percent"  class="wrapped">
 
-<app-progress-bar [progress]="initialVal" [total]="totalVal"></app-progress-bar>
+<app-progress-bar [progress]="percent" [total]="totalVal"></app-progress-bar>

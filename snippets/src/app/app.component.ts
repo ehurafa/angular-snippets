@@ -7,7 +7,7 @@ import { Component  } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  initialVal = 80;
+  percent = 80;
   totalVal = 100; 
   title = 'snippets';
 }

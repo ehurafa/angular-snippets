@@ -1,5 +1,6 @@
 <div class="progress-bar-container">
-    <div [ngClass]="['progress-bar', color]" 
+    <div [ngClass]="[((complete) ? 'complete' : ''), color, 'progress-bar']" 
      [ngStyle]="{'width': progress + '%'}">
+        <span class="status" [ngStyle]="{'opacity': progress / 100}">{{progress}}%</span>
     </div>
  </div>

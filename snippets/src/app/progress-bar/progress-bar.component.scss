@@ -50,7 +50,7 @@
     .progress-bar {  
         @include  border-radius($progressBarHeight/2);   
           
-        height: 30px;
+        height: $progressBarHeight;
         width: 0;  
         position: relative;
         top: -1px;
@@ -87,6 +87,18 @@
          }
          &.complete {
             animation: none;
+         }
+
+         .status {
+            width: 100%;
+            height: $progressBarHeight;
+            line-height: $progressBarHeight;
+            color: #fff;
+            display: inline-block;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            opacity: 0;
          }
      }
 }

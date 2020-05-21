@@ -16,6 +16,7 @@ export class ProgressBarComponent implements OnInit, OnChanges {
   constructor() { }  
 
   colors(): void {
+    this.complete = false;
     if(this.progress < 30) {
       this.color = 'red';
     } else if(this.progress < 55) {
@@ -27,6 +28,7 @@ export class ProgressBarComponent implements OnInit, OnChanges {
     }
     else {
      this.color = 'blue';
+     this.complete = true;
     }
   }
 
